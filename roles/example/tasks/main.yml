@@ -1,0 +1,3 @@
+---
+- import_tasks: something.yml
+  tags: do_something

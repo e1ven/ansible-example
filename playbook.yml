@@ -1,0 +1,6 @@
+---
+- hosts: local
+
+  roles:
+    - role: example
+      tags: always
