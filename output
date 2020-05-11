@@ -1,0 +1,143 @@
+ansible-playbook 2.9.4
+  config file = /home/user/tmp2/ansible/ansible.cfg
+  configured module search path = ['/home/user/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /home/user/.local/lib/python3.7/site-packages/ansible
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.7.3 (default, Dec 20 2019, 18:57:59) [GCC 8.3.0]
+Using /home/user/tmp2/ansible/ansible.cfg as config file
+setting up inventory plugins
+host_list declined parsing /home/user/tmp2/ansible/inventory as it did not pass its verify_file() method
+script declined parsing /home/user/tmp2/ansible/inventory as it did not pass its verify_file() method
+auto declined parsing /home/user/tmp2/ansible/inventory as it did not pass its verify_file() method
+Set default localhost to localhost
+Parsed /home/user/tmp2/ansible/inventory inventory source with ini plugin
+statically imported: /home/user/tmp2/ansible/roles/example/tasks/something.yml
+Loading callback plugin default of type stdout, v2.0 from /home/user/.local/lib/python3.7/site-packages/ansible/plugins/callback/default.py
+
+PLAYBOOK: playbook.yml *********************************************************
+Positional arguments: playbook.yml
+verbosity: 4
+connection: smart
+timeout: 10
+become_method: sudo
+tags: ('all',)
+inventory: ('/home/user/tmp2/ansible/inventory',)
+extra_vars: ('ANSIBLE_NOCOLOR=true',)
+forks: 5
+1 plays in playbook.yml
+
+PLAY [local] *******************************************************************
+
+TASK [Gathering Facts] *********************************************************
+task path: /home/user/tmp2/ansible/playbook.yml:2
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: user
+<localhost> EXEC /bin/sh -c 'echo ~user && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/user/.ansible/tmp/ansible-tmp-1589217276.201621-234088726090937 `" && echo ansible-tmp-1589217276.201621-234088726090937="` echo /home/user/.ansible/tmp/ansible-tmp-1589217276.201621-234088726090937 `" ) && sleep 0'
+Using module file /home/user/.local/lib/python3.7/site-packages/ansible/modules/system/setup.py
+<localhost> PUT /home/user/.ansible/tmp/ansible-local-1jut9i7_n/tmppf1ai844 TO /home/user/.ansible/tmp/ansible-tmp-1589217276.201621-234088726090937/AnsiballZ_setup.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/user/.ansible/tmp/ansible-tmp-1589217276.201621-234088726090937/ /home/user/.ansible/tmp/ansible-tmp-1589217276.201621-234088726090937/AnsiballZ_setup.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/bin/env python3 /home/user/.ansible/tmp/ansible-tmp-1589217276.201621-234088726090937/AnsiballZ_setup.py && sleep 0'
+subl o<localhost> EXEC /bin/sh -c 'rm -f -r /home/user/.ansible/tmp/ansible-tmp-1589217276.201621-234088726090937/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost]
+META: ran handlers
+
+TASK [example : Remove directories] ********************************************
+task path: /home/user/tmp2/ansible/roles/example/tasks/something.yml:3
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: user
+<localhost> EXEC /bin/sh -c 'echo ~user && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/user/.ansible/tmp/ansible-tmp-1589217277.0675797-42499358708516 `" && echo ansible-tmp-1589217277.0675797-42499358708516="` echo /home/user/.ansible/tmp/ansible-tmp-1589217277.0675797-42499358708516 `" ) && sleep 0'
+utUsing module file /home/user/.local/lib/python3.7/site-packages/ansible/modules/files/file.py
+<localhost> PUT /home/user/.ansible/tmp/ansible-local-1jut9i7_n/tmpd6ooq115 TO /home/user/.ansible/tmp/ansible-tmp-1589217277.0675797-42499358708516/AnsiballZ_file.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/user/.ansible/tmp/ansible-tmp-1589217277.0675797-42499358708516/ /home/user/.ansible/tmp/ansible-tmp-1589217277.0675797-42499358708516/AnsiballZ_file.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/bin/env python3 /home/user/.ansible/tmp/ansible-tmp-1589217277.0675797-42499358708516/AnsiballZ_file.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/user/.ansible/tmp/ansible-tmp-1589217277.0675797-42499358708516/ > /dev/null 2>&1 && sleep 0'
+<localhost> EXEC /bin/sh -c 'echo ~user && sleep 0'
+ok: [localhost] => (item=/home/user/tmp2/ansible/roles/example/tmp/foo) => {
+    "ansible_loop_var": "item",
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "backup": null,
+            "content": null,
+            "delimiter": null,
+            "directory_mode": null,
+            "follow": true,
+            "force": false,
+            "group": null,
+            "mode": null,
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": null,
+            "path": "item",
+            "recurse": false,
+            "regexp": null,
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "absent",
+            "unsafe_writes": null
+        }
+    },
+    "item": "/home/user/tmp2/ansible/roles/example/tmp/foo",
+    "path": "item",
+    "state": "absent"
+}
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/user/.ansible/tmp/ansible-tmp-1589217277.273828-24605346613200 `" && echo ansible-tmp-1589217277.273828-24605346613200="` echo /home/user/.ansible/tmp/ansible-tmp-1589217277.273828-24605346613200 `" ) && sleep 0'
+Using module file /home/user/.local/lib/python3.7/site-packages/ansible/modules/files/file.py
+<localhost> PUT /home/user/.ansible/tmp/ansible-local-1jut9i7_n/tmpon1azwss TO /home/user/.ansible/tmp/ansible-tmp-1589217277.273828-24605346613200/AnsiballZ_file.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/user/.ansible/tmp/ansible-tmp-1589217277.273828-24605346613200/ /home/user/.ansible/tmp/ansible-tmp-1589217277.273828-24605346613200/AnsiballZ_file.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/bin/env python3 /home/user/.ansible/tmp/ansible-tmp-1589217277.273828-24605346613200/AnsiballZ_file.py && sleep 0'
+p<localhost> EXEC /bin/sh -c 'rm -f -r /home/user/.ansible/tmp/ansible-tmp-1589217277.273828-24605346613200/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => (item=/home/user/tmp2/ansible/roles/example/tmp/bar) => {
+    "ansible_loop_var": "item",
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "backup": null,
+            "content": null,
+            "delimiter": null,
+            "directory_mode": null,
+            "follow": true,
+            "force": false,
+            "group": null,
+            "mode": null,
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": null,
+            "path": "item",
+            "recurse": false,
+            "regexp": null,
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "absent",
+            "unsafe_writes": null
+        }
+    },
+    "item": "/home/user/tmp2/ansible/roles/example/tmp/bar",
+    "path": "item",
+    "state": "absent"
+}
+META: ran handlers
+META: ran handlers
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+u
